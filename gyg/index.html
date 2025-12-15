@@ -17,7 +17,35 @@
         referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="styles.css">
+    <script>
+        // Espera a que el DOM esté completamente cargado
+        document.addEventListener('DOMContentLoaded', () => {
 
+            // Selecciona todos los enlaces de la navegación principal que empiecen con '#'
+            const navLinks = document.querySelectorAll('.main-nav a[href^="#"]');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    // Previene el comportamiento predeterminado del enlace (salto instantáneo)
+                    e.preventDefault();
+
+                    // Obtiene el valor del atributo href (ej: #services, #contact)
+                    const targetId = this.getAttribute('href');
+
+                    // Verifica que el ID de destino exista en el documento
+                    const targetSection = document.querySelector(targetId);
+
+                    if (targetSection) {
+                        // Utiliza el método scrollIntoView con la opción 'smooth'
+                        // Esto maneja el scroll suave de forma nativa en la mayoría de los navegadores modernos.
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 
 <body>
 
