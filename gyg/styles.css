@@ -295,7 +295,6 @@ html {
 
 #meet-our-team .card .front {
     transform: perspective(600px) rotateY(0deg);
-    box-shadow: 0 5px 10px #000;
 }
 
 /* ... (Resto de estilos del flip card, asegurando que solo apliquen a #meet-our-team si es necesario) ... */
@@ -322,31 +321,32 @@ html {
 
 #meet-our-team .card .back {
     transform: perspective(600px) rotateY(180deg);
-    background: rgb(3, 35, 54);
+    background: #DAC59C;
     padding: 15px;
-    color: #f3f3f3;
+    color: #2c2e43;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-    box-shadow: 0 5px 10px #000;
     font-family: 'Montserrat', sans-serif;
 
 }
 
 #meet-our-team .card .back .link {
-    border-top: solid 1px #f3f3f3;
+    border-top: solid 1px #2c2e43;
     height: 50px;
     line-height: 50px;
 }
 
 #meet-our-team .card .back .link a {
-    color: #f3f3f3;
+    color: #2c2e43;
+    text-decoration: none;
 }
 
 #meet-our-team .card .back h3 {
     font-size: 30px;
     margin-top: 20px;
+    color: #2c2e43;
     letter-spacing: 2px;
     font-family: 'Montserrat', sans-serif;
 
