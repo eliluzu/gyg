@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G+G CPA Services - One Page</title>
+
+    <style>
+        /* Importación de fuentes de Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+    </style>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJdZ07f2V73RS+I94F2fN+j1gD+yX7X3X7B/Jt+3sA==" crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles.css">
+
+
+<body>
+
+    <a href="https://wa.me/12345678900?text=Hola" class="float-wa" target="_blank">
+        <i class="fa fa-whatsapp" style="margin-top:16px;"></i>
+    </a>
+    <section class="hero-section">
+
+        <div class="video-background">
+            <video autoplay loop muted id="myVideo">
+                <source src="video/G&G.mp4" type="video/mp4">
+                Tu navegador no soporta la etiqueta de video.
+            </video>
+        </div>
+
+        <div class="overlay"></div>
+
+        <button id="playPauseBtn" class="video-control-btn">
+            Pausar Video
+        </button>
+
+        <header class="main-header">
+
+            <div class="logo-left">
+                <img src="img/logo.png" alt="G+G CPA Services Logo">
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#team">TEAM</a></li>
+                    <li><a href="#services">SERVICES</a></li>
+                    <li><a href="#meet-our-team">MEET OUR TEAM</a></li>
+                    <li><a href="#testimonials">TESTIMONIALS</a></li>
+                    <li><a href="#contact">CONTACTO</a></li>
+                </ul>
+            </nav>
+
+        </header>
+
+        <div class="hero-content">
+            <h1>FINANCIAL PEACE for your business STARTS HERE</h1>
+            <a href="#consultation" class="cta-button">
+                Schedule your consultation
+            </a>
+        </div>
+
+    </section>
+
+    <section id="team" class="team-section">
+        <div class="team-content-container">
+            <div class="team-description-box">
+                <h2 class="team-title">TEAM</h2>
+                <p><strong>TRUST YOUR BUSINESS TO US. WE WILL TAKE CARE OF IT</strong></p>
+                <p>We are the only CPA firm in Memphis with a Spanish speaking CPA. Believing in the quality we provide
+                    to our clients; we serve our clients unlike any other CPA firm.</p>
+                <p>Focusing on small businesses and helping them strive to develop a stronger and more supportive
+                    economy. We understand that no two businesses are the same. That’s why we also offer fully
+                    customized solutions to suit your unique situation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2 class="services-title">SERVICES</h2>
+
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-default">
+                    <h3>Diseño Web 💻</h3>
+                    <p>Creamos interfaces modernas y funcionales.</p>
+                </div>
+                <div class="card-hover">
+                    <h4>Detalles: Diseño</h4>
+                    <p>Nos enfocamos en la experiencia de usuario (UX) y la estética visual de tu sitio.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-default">
+                    <h3>Frontend Dev ⚙️</h3>
+                    <p>Hacemos que tu sitio sea interactivo y rápido.</p>
+                </div>
+                <div class="card-hover">
+                    <h4>Detalles: Frontend</h4>
+                    <p>Usamos las últimas tecnologías como React, Vue y JavaScript avanzado.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-default">
+                    <h3>Consultoría SEO 📈</h3>
+                    <p>Ayudamos a que te encuentren en los motores de búsqueda.</p>
+                </div>
+                <div class="card-hover">
+                    <h4>Detalles: SEO</h4>
+                    <p>Mejoramos tu posicionamiento orgánico con estrategias probadas y análisis de palabras clave.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-default">
+                    <h3>Mantenimiento 🔧</h3>
+                    <p>Aseguramos el buen funcionamiento de tu plataforma.</p>
+                </div>
+                <div class="card-hover">
+                    <h4>Detalles: Mantenimiento</h4>
+                    <p>Ofrecemos soporte continuo, actualizaciones de seguridad y optimización de rendimiento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="meet-our-team">
+        <h2 class="team-title">MEET OUR TEAM</h2>
+
+        <div class="carousel-container">
+
+            <button class="nav-arrow left-arrow" aria-label="Anterior">&#10094;</button>
+
+            <div class="card-wrapper">
+
+                <div class="card">
+                    <div class="face front">
+                        <img src="img/01.png" alt="Foto de Miembro 1 del equipo">
+                        <h3>Member 1 (Japan)</h3>
+                    </div>
+                    <div class="face back">
+                        <h3>Japan</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius harum molestiae iste, nihil
+                            doloribus fugiat distinctio ducimus maxime totam nulla fuga odio non aperiam eos?</p>
+                        <div class="link">
+                            <a href="#">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="face front">
+                        <img src="img/02.png" alt="Foto de Miembro 2 del equipo">
+                        <h3>Member 2 (Spain)</h3>
+                    </div>
+                    <div class="face back">
+                        <h3>Spain</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius harum molestiae iste, nihil
+                            doloribus fugiat distinctio ducimus maxime totam nulla fuga odio non aperiam eos?</p>
+                        <div class="link">
+                            <a href="#">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="face front">
+                        <img src="img/03.png" alt="Foto de Miembro 3 del equipo">
+                        <h3>Member 3 (Perú)</h3>
+                    </div>
+                    <div class="face back">
+                        <h3>Perú</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius harum molestiae iste, nihil
+                            doloribus fugiat distinctio ducimus maxime totam nulla fuga odio non aperiam eos?</p>
+                        <div class="link">
+                            <a href="#">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="face front">
+                        <img src="img/04.png" alt="Foto de Miembro 4 del equipo">
+                        <h3>Member 4 (México)</h3>
+                    </div>
+                    <div class="face back">
+                        <h3>México</h3>
+                        <p>Contenido adicional para la cuarta tarjeta. ¡Explora los detalles!</p>
+                        <div class="link">
+                            <a href="#">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="face front">
+                        <img src="img/05.png" alt="Foto de Miembro 5 del equipo">
+                        <h3>Member 5 (Japan 2)</h3>
+                    </div>
+                    <div class="face back">
+                        <h3>Japan 2</h3>
+                        <p>Contenido adicional para la quinta tarjeta. ¡Explora los detalles!</p>
+                        <div class="link">
+                            <a href="#">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="face front">
+                        <img src="img/06.png" alt="Foto de Miembro 6 del equipo">
+                        <h3>Member 6 (Spain 2)</h3>
+                    </div>
+                    <div class="face back">
+                        <h3>Spain 2</h3>
+                        <p>Contenido adicional para la sexta tarjeta. ¡Explora los detalles!</p>
+                        <div class="link">
+                            <a href="#">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="face front">
+                        <img src="img/07.png" alt="Foto de Miembro 7 del equipo">
+                        <h3>Member 7 (Perú 2)</h3>
+                    </div>
+                    <div class="face back">
+                        <h3>Perú 2</h3>
+                        <p>Contenido adicional para la séptima tarjeta. ¡Explora los detalles!</p>
+                        <div class="link">
+                            <a href="#">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="nav-arrow right-arrow" aria-label="Siguiente">&#10095;</button>
+        </div>
+    </section>
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="title" style="color: var(--active-color);">What our clients say</h2>
+            </div>
+            <div class="testimonials-content">
+                <div class="swiper testimonials-slider js-testimonials-slider">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide testimonials-item">
+                            <div class=" swiper-slide testimonials-item">
+                                <div class="info">
+                                    <img src="img/01.png" alt="Photo of client Maria Rodriguez">
+                                    <div class="text-box">
+                                        <h3 class="name">Maria Rodriguez</h3>
+                                        <span class="job">Restaurant Owner</span>
+                                    </div>
+                                </div>
+                                <p>The Spanish-speaking CPA was a huge relief! The whole process, from quarterly filing
+                                    to
+                                    tax preparation, was smooth and easy to understand. True financial peace.</p>
+                                <div class="rating">
+                                    <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+                                    <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+                                    <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+                                    <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+                                    <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+                                </div>
+                            </div>
+
+
+                            <div class=" swiper-slide testimonials-item">
+                                <div class="info">
+                                    <img src="img/02.png" alt="Photo of client Maria Rodriguez">
+                                    <div class="text-box">
+                                        <h3 class="name">Maria Rodriguez</h3>
+                                        <span class="job">Restaurant Owner</span>
+                                    </div>
+                                </div>
+                                <p>The Spanish-speaking CPA was a huge relief! The whole process, from quarterly filing
+                                    to
+                                    tax preparation, was smooth and easy to understand. True financial peace.</p>
+                                <div class="rating">
+                                    <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+                                    <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+                                    <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+                                    <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+                                    <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide testimonials-item">
+                                <div class="info">
+                                    <img src="img/03.png" alt="Photo of client David Chen">
+                                    <div class="text-box">
+                                        <h3 class="name">David Chen</h3>
+                                        <span class="job">Logistics Manager</span>
+                                    </div>
+                                </div>
+                                <p>Outstanding service for our growing logistics company. The customized solutions they
+                                    offered helped us optimize our taxes and improve cash flow significantly.</p>
+                                <div class="rating">
+                                    <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+                                    <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+                                    <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+                                    <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+                                    <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide testimonials-item">
+                                <div class="info">
+                                    <img src="img/04.png" alt="Photo of client Sarah Jones">
+                                    <div class="text-box">
+                                        <h3 class="name">Sarah Jones</h3>
+                                        <span class="job">Freelance Consultant</span>
+                                    </div>
+                                </div>
+                                <p>As a freelancer, keeping up with taxes was a nightmare. G+G made everything simple,
+                                    efficient, and stress-free. I highly recommend their individualized attention.</p>
+                                <div class="rating">
+                                    <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+                                    <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+                                    <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+                                    <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+                                    <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide testimonials-item">
+                                <div class="info">
+                                    <img src="img/05.png" alt="Photo of client Michael B.">
+                                    <div class="text-box">
+                                        <h3 class="name">Michael B.</h3>
+                                        <span class="job">Real Estate Investor</span>
+                                    </div>
+                                </div>
+                                <p>Professional and meticulous. They handle all the complex real estate tax codes
+                                    flawlessly. Knowing my business is in such capable hands is truly invaluable.</p>
+                                <div class="rating">
+                                    <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+                                    <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+                                    <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+                                    <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+                                    <i class="fa-solid fa-star fa-2xs" style="color: #FFD43B;"></i>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="swiper-pagination js-testimonials-pagination"></div>
+                </div>
+            </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"></script>
+    <div class="go-top-container">
+        <div class="go-top-button">
+            <img src="img/flecha.png" alt="Foto de Miembro 6 del equipo">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Este script es correcto y gestionará los 5 testimonios
+        const swiper = new Swiper('.js-testimonials-slider', {
+            grabCursor: true,
+            spaceBetween: 30,
+            pagination: {
+                el: '.js-testimonials-pagination',
+                clickable: true
+            },
+            breakpoints: {
+                767: {
+                    slidesPerView: 2 // Mostrará 2 testimonios a la vez en tablets y escritorios
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,829 @@
+/* Variables de Color */
+:root {
+    --primary-color: #2c2e43;
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --overlay-color: rgba(0, 0, 0, 0.4);
+    --active-color: #e6c89b;
+    --team-bg-color: rgb(9, 74, 136);
+}
+
+/* Reset Básico y Aplicación de Fuentes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+/* ------------------------------------------------------------------ */
+/* --- HERO SECTION Y NAVEGACIÓN --- */
+/* ------------------------------------------------------------------ */
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ... (Se mantienen los estilos del Hero sin cambios) ... */
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -2;
+}
+
+#myVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-color);
+    z-index: -1;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo-left img {
+    max-width: 100%;
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.main-nav {
+    margin-left: auto;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav li::after,
+.main-nav li::before {
+    content: none !important;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 0.95em;
+    transition: color 0.3s, background-color 0.3s;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+.main-nav a:hover {
+    background-color: var(--active-color);
+    color: var(--primary-color);
+}
+
+.main-nav .active a {
+    color: var(--text-light) !important;
+    background-color: transparent !important;
+    border-bottom: none !important;
+    padding-bottom: 10px;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    color: var(--text-light);
+    z-index: 5;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2.5em, 6vw, 3.5em);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--active-color);
+    border: 2px solid var(--active-color);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s, border-color 0.3s;
+    cursor: pointer;
+    font-size: 1.25em;
+}
+
+.cta-button:hover {
+    background-color: #3b3e57;
+    transform: translateY(-2px);
+}
+
+.video-control-btn {
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    z-index: 20;
+    background-color: rgba(44, 46, 67, 0.7);
+    color: var(--text-light);
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.video-control-btn:hover {
+    background-color: rgba(44, 46, 67, 1);
+}
+
+
+/* ------------------------------------------------------------------ */
+/* --- SECCIÓN TEAM DESCRIPTION (#team) --- */
+/* ------------------------------------------------------------------ */
+
+.team-section {
+    /* Agrega la imagen de fondo y elimina el background-color */
+    background-image: url('img/grupo.png');
+    background-size: cover;
+
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 90px 20px;
+}
+
+.team-content-container {
+    text-align: center;
+    max-width: 900px;
+    width: 100%;
+    padding: 20px;
+}
+
+.team-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2.5em, 6vw, 3em);
+    color: var(--active-color);
+    margin-bottom: 20px;
+}
+
+.team-description-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--text-dark);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    line-height: 1.7;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.team-description-box p {
+    margin-bottom: 15px;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* --- SECCIÓN CARRUSEL TEAM (#meet-our-team) --- */
+/* ------------------------------------------------------------------ */
+
+#meet-our-team {
+    background: var(--primary-color);
+    padding: 80px 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#meet-our-team .carousel-container {
+    position: relative;
+    width: 90%;
+    max-width: 1230px;
+    margin: 20px 0;
+}
+
+#meet-our-team .card-wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px 0;
+    gap: 10px;
+    /* Separación entre tarjetas de equipo */
+}
+
+/* Ocultar la barra de desplazamiento */
+#meet-our-team .card-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+#meet-our-team .card-wrapper {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* --- Estilos de las Tarjetas (3D Flip) --- */
+
+#meet-our-team .card {
+    /* CLAVE: Estilos específicos para las tarjetas del equipo */
+    flex: 0 0 300px;
+    width: 300px;
+    height: 350px;
+    position: relative;
+    margin: 0;
+    /* Ya usamos gap en card-wrapper */
+    scroll-snap-align: start;
+}
+
+#meet-our-team .card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+#meet-our-team .card .front {
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
+}
+
+/* ... (Resto de estilos del flip card, asegurando que solo apliquen a #meet-our-team si es necesario) ... */
+
+#meet-our-team .card .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#meet-our-team .card .front h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: var(--text-light);
+    background: rgba(0, 0, 0, .4);
+    text-align: center;
+}
+
+#meet-our-team .card .back {
+    transform: perspective(600px) rotateY(180deg);
+    background: rgb(3, 35, 54);
+    padding: 15px;
+    color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px #000;
+}
+
+#meet-our-team .card .back .link {
+    border-top: solid 1px #f3f3f3;
+    height: 50px;
+    line-height: 50px;
+}
+
+#meet-our-team .card .back .link a {
+    color: #f3f3f3;
+}
+
+#meet-our-team .card .back h3 {
+    font-size: 30px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+#meet-our-team .card .back p {
+    letter-spacing: 1px;
+}
+
+#meet-our-team .card:hover .front {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+#meet-our-team .card:hover .back {
+    transform: perspective(600px) rotateY(360deg);
+}
+
+/* --- Estilos para las Flechas de Navegación del Carrusel de Equipo --- */
+.nav-arrow {
+    /* Posicionamiento y transformación */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3.3rem;
+    height: 3.3rem;
+    /* Estilos visuales */
+    background: #e6c89b;
+    color: var(--text-light);
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 24px;
+    line-height: 1;
+    border-radius: 50%;
+    user-select: none;
+    transition: background 0.3s;
+}
+
+.nav-arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.left-arrow {
+    left: -60px;
+}
+
+.right-arrow {
+    right: -60px;
+}
+
+/* ------------------------------------------------------------------ */
+/* --- SECCIÓN SERVICES (CUADRÍCULA FIJA - VISTA EN IMAGEN) --- */
+/* ------------------------------------------------------------------ */
+
+#services {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: var(--text-light);
+    background-image: url(img/fondo_services.png);
+    background-size: cover;
+}
+
+#services h2 {
+    margin-bottom: 30px;
+    font-size: 2em;
+    color: var(--text-dark);
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2.5em, 6vw, 3em);
+    color: #DAC59C;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de Cuadrícula */
+#services .card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Base para móvil */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    /* ANULAMOS los estilos de carrusel */
+    overflow-x: visible;
+    padding: 0;
+}
+
+/* Estilos de la Tarjeta */
+#services .card {
+    /* Sobreescribimos el flex y el ancho fijo del carrusel de equipo */
+    flex: initial;
+    width: initial;
+    height: 350px;
+
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    position: relative;
+    background-color: #f4f4f4;
+    color: var(--text-dark);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    scroll-snap-align: none;
+}
+
+/* Contenido por defecto y hover (se mantienen los estilos de SERVICES originales) */
+
+#services .card-default {
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    transition: opacity 0.4s ease-in-out;
+}
+
+#services .card-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+#services .card:hover {
+    background-color: var(--primary-color);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    transform: translateY(-8px);
+    color: var(--text-light);
+}
+
+#services .card:hover .card-default {
+    opacity: 0;
+}
+
+#services .card:hover .card-hover {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+/* ------------------------------------------------------------------ */
+/* --- MEDIA QUERIES --- */
+/* ------------------------------------------------------------------ */
+
+@media (min-width: 1024px) {
+
+    /* ESCRITORIO GRANDE: SERVICES 4 columnas en línea */
+    #services .card-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    /* TABLET: SERVICES 2x2 Cuadrícula */
+    #services .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    #services {
+        padding: 60px 30px;
+    }
+}
+
+@media (min-width: 768px) {
+
+    /* Ajustes generales de escritorio/tablet */
+    .team-section {
+        background-attachment: fixed;
+    }
+
+    #services {
+        padding: 80px 30px;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    /* Ajustes de navegación */
+    .main-header {
+        padding: 20px 30px;
+    }
+
+    .main-nav ul {
+        gap: 20px;
+    }
+
+    .hero-content {
+        left: 30px;
+    }
+
+    .video-control-btn {
+        right: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    /* MÓVIL: SERVICES 1 Columna */
+
+    /* HERO SECTION */
+    .main-header {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+
+    .logo-left {
+        margin: 0 auto;
+    }
+
+    .logo-left img {
+        height: 35px;
+    }
+
+    .main-nav {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+        width: 100%;
+        padding: 0;
+    }
+
+    .main-nav a {
+        display: block;
+        width: 100%;
+        padding: 15px 15px;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-content {
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        max-width: 90%;
+    }
+
+    .cta-button {
+        display: block;
+        margin: 0 auto;
+        width: 90%;
+        max-width: 300px;
+        font-size: 1.1em;
+    }
+
+    .video-control-btn {
+        top: 85px;
+        right: 15px;
+    }
+
+    /* TEAM CARRUSEL */
+    .nav-arrow {
+        padding: 10px 8px;
+    }
+
+    #meet-our-team .card-wrapper {
+        padding: 20px 5px;
+    }
+
+    /* WHATSAPP FLOTANTE */
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .fa-whatsapp {
+        line-height: 50px;
+        font-size: 25px;
+    }
+
+    /* TEAM DESCRIPTION */
+    .team-section {
+        min-height: 400px;
+        padding: 30px 15px;
+        background-attachment: scroll;
+    }
+
+    .team-title {
+        font-family: 'Montserrat', sans-serif;
+        font-size: clamp(2.5em, 6vw, 3em);
+        /* El color debe coincidir con el que estás usando para TEAM */
+        color: #DAC59C;
+        /* Color dorado/crema visible en la imagen */
+        margin-bottom: 20px;
+    }
+
+    .team-description-box {
+        padding: 20px;
+    }
+}
+
+.float-wa {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+
+    /* POSICIÓN FINAL DE WHATSAPP: Encima del Go Top */
+    bottom: 120px;
+    /* Separación cómoda del borde */
+    right: 40px;
+
+    z-index: 99;
+    text-decoration: none;
+}
+
+/* GOTOP */
+
+.go-top-container {
+    position: fixed;
+    /* POSICIÓN FINAL DE GO TOP: Más abajo que WhatsApp */
+    bottom: 40px;
+    /* Posicionamiento más cerca del borde (usando 40px o 2.5rem) */
+    right: 40px;
+    /* Se alinea horizontalmente con WhatsApp */
+
+    width: 3.3rem;
+    height: 3.3rem;
+    /* CLAVE: Z-index mayor que WhatsApp para que esté visualmente por encima si se tocan */
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.go-top-button {
+    position: absolute;
+    width: 3.3rem;
+    height: 3.3rem;
+    background-color: var(--active-color);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .2s;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.go-top-button img {
+    /* CLAVE: Centrar la imagen dentro del círculo */
+    position: absolute;
+    width: 40%;
+    /* Ajusta este porcentaje si la imagen es demasiado grande/pequeña */
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Centrado perfecto */
+    /* Aseguramos que el ícono sea blanco, si la imagen no lo es, esto no funcionará */
+    filter: brightness(0) invert(1);
+    transition: .2s;
+}
+
+/* LA CLASE QUE LO MUESTRA AL HACER SCROLL */
+.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ... (el resto de estilos de .show y @keyframes se mantienen) ... */
+
+/* --- SECCIÓN TESTIMONIOS (#testimonials) --- */
+/* ------------------------------------------------------------------ */
+
+.container {
+    max-width: 1170px;
+    margin: auto;
+    padding: 0 15px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header .title {
+    font-size: 35px;
+    font-weight: 600;
+    text-transform: capitalize;
+    line-height: 1.2;
+    /* CORRECCIÓN: Usar el color de acento o el color blanco definido en las variables. 
+       Si el fondo es oscuro (primary-color), el texto debe ser claro (active-color o text-light). */
+    color: var(--active-color);
+    /* Usamos el color dorado/crema para el título */
+}
+
+.testimonials {
+    padding: 100px 0;
+    /* CORRECCIÓN: Añadir color de fondo para que el contenido claro sea visible */
+    background-color: var(--primary-color);
+}
+
+.testimonials-item {
+    background-color: #f3f3f3;
+    padding: 30px;
+    border-radius: 30px;
+    /* ... otros estilos ... */
+    /* No hay un 'width' fijo, lo cual es correcto para Swiper */
+}
+
+.testimonials-item .info {
+    display: flex;
+    align-items: center;
+}
+
+.testimonials-item img {
+    max-width: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+    vertical-align: middle;
+    /* Mejora: Asegurar que la imagen sea cuadrada si es necesario */
+    height: 80px;
+    object-fit: cover;
+}
+
+.testimonials-item .name {
+    font-size: 24px;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: var(--text-dark);
+    /* Usar variable para color oscuro */
+    line-height: 1.2;
+}
+
+.testimonials-item .job {
+    text-transform: capitalize;
+    color: var(--text-dark);
+    /* Usar variable para color oscuro */
+    opacity: 0.7;
+    /* Sutilmente más tenue */
+}
+
+.testimonials-item p {
+    margin-top: 20px;
+    color: #333333;
+    /* Usar variable para el color del cuerpo del texto */
+}
+
+.testimonials-item .rating {
+    margin-top: 15px;
+    font-size: 18px;
+    /* Aumentar un poco el tamaño de las estrellas para que se noten */
+    color: var(--active-color);
+    /* Usar variable para el color de acento (dorado/crema) */
+}
+
+/* Estilos de la Paginación (Swiper.js) */
+
+.testimonials .swiper-pagination {
+    position: relative;
+    margin-top: 40px;
+    bottom: auto;
+}
+
+.testimonials .swiper-pagination-bullet {
+    height: 12px;
+    width: 12px;
+    background-color: #DAC59C;
+    /* Color dorado/crema */
+    opacity: 0.4;
+}
+
+.testimonials .swiper-pagination-bullet-active {
+    opacity: 1;
+    /* El puntito activo es sólido */
+}
