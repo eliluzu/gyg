@@ -748,15 +748,11 @@ html {
     font-weight: 800;
     text-transform: capitalize;
     line-height: 1.2;
-    /* CORRECCIÓN: Usar el color de acento o el color blanco definido en las variables. 
-       Si el fondo es oscuro (primary-color), el texto debe ser claro (active-color o text-light). */
     color: var(--active-color);
-    /* Usamos el color dorado/crema para el título */
 }
 
 .testimonials {
     padding: 100px 0;
-    /* CORRECCIÓN: Añadir color de fondo para que el contenido claro sea visible */
     background-color: var(--primary-color);
 }
 
@@ -764,8 +760,6 @@ html {
     background-color: #f3f3f3;
     padding: 30px;
     border-radius: 30px;
-    /* ... otros estilos ... */
-    /* No hay un 'width' fijo, lo cual es correcto para Swiper */
 }
 
 .testimonials-item .info {
@@ -774,22 +768,13 @@ html {
 }
 
 .testimonials-item img {
-    /* 1. Define un tamaño fijo y cuadrado para el contenedor o la imagen */
+
     width: 80px;
-    /* Usa 'width' en lugar de solo 'max-width' para forzar el tamaño */
     height: 80px;
-    /* ¡Añade 'height' igual al 'width'! */
-
-    /* 2. Aplica 50% para un círculo perfecto */
     border-radius: 50%;
-
-    /* Otras propiedades (mantenidas de tu estilo original) */
     margin-right: 20px;
     vertical-align: middle;
-
-    /* Propiedades opcionales para manejar cómo se ve la imagen dentro del círculo si la original no es cuadrada */
     object-fit: cover;
-    /* Esto asegura que la imagen cubra todo el espacio sin distorsionarse y se recorte si es necesario */
 }
 
 .testimonials-item .name {
@@ -797,30 +782,26 @@ html {
     text-transform: capitalize;
     font-weight: 600;
     color: var(--text-dark);
-    /* Usar variable para color oscuro */
     line-height: 1.2;
 }
 
 .testimonials-item .job {
     text-transform: capitalize;
     color: var(--text-dark);
-    /* Usar variable para color oscuro */
     opacity: 0.7;
-    /* Sutilmente más tenue */
+
 }
 
 .testimonials-item p {
     margin-top: 20px;
     color: #333333;
-    /* Usar variable para el color del cuerpo del texto */
+
 }
 
 .testimonials-item .rating {
     margin-top: 15px;
     font-size: 18px;
-    /* Aumentar un poco el tamaño de las estrellas para que se noten */
     color: var(--active-color);
-    /* Usar variable para el color de acento (dorado/crema) */
 }
 
 /* Estilos de la Paginación (Swiper.js) */
