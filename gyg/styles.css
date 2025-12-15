@@ -13,7 +13,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 body {
@@ -315,6 +316,8 @@ html {
     color: var(--text-light);
     background: rgba(0, 0, 0, .4);
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 #meet-our-team .card .back {
@@ -327,6 +330,8 @@ html {
     justify-content: space-between;
     text-align: center;
     box-shadow: 0 5px 10px #000;
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 #meet-our-team .card .back .link {
@@ -343,6 +348,8 @@ html {
     font-size: 30px;
     margin-top: 20px;
     letter-spacing: 2px;
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 #meet-our-team .card .back p {
@@ -783,18 +790,22 @@ html {
     font-weight: 600;
     color: var(--text-dark);
     line-height: 1.2;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .testimonials-item .job {
     text-transform: capitalize;
     color: var(--text-dark);
     opacity: 0.7;
+    font-family: 'Montserrat', sans-serif;
+
 
 }
 
 .testimonials-item p {
     margin-top: 20px;
     color: #333333;
+    font-family: 'Montserrat', sans-serif;
 
 }
 
@@ -823,4 +834,183 @@ html {
 .testimonials .swiper-pagination-bullet-active {
     opacity: 1;
     /* El puntito activo es sólido */
+}
+
+/* --- Estilos para la sección de UBICACIÓN / CONTACTO --- */
+
+.location-section {
+    /* Altura MÍNIMA para asegurar que el mapa se vea en dispositivos grandes. */
+    min-height: 700px;
+    position: relative;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.location-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Utilizamos Flexbox para controlar el posicionamiento interno del bloque flotante */
+    display: flex;
+    justify-content: flex-end;
+    /* Alinea el bloque de info a la izquierda */
+    align-items: flex-start;
+    /* Alinea el bloque de info arriba */
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 10;
+    /* Asegura que el contenido esté sobre el mapa */
+}
+
+/* --- Estilos del Bloque de Información Flotante (Lado Izquierdo) --- */
+.info-contacto {
+    /* Define el tamaño del bloque flotante, similar a la imagen */
+    width: 90%;
+    max-width: 400px;
+    background-color: #2c2e43;
+    color: white;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    position: relative;
+    z-index: 10;
+    /* NUEVA LÍNEA CLAVE: Asegura que el texto largo se ajuste */
+    word-wrap: break-word;
+    /* Soluciona el problema de texto que se sale */
+}
+
+.location-title {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #5a7b8e;
+    /* Línea de separación bajo el título */
+    padding-bottom: 10px;
+    color: #DAC59C;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.detalle-contacto {
+    margin-bottom: 15px;
+}
+
+.detalle-contacto h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #DAC59C;
+    font-size: 0.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.detalle-contacto p {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    font-size: 1em;
+    margin: 3px 0;
+    line-height: 1.4;
+}
+
+
+/* --- Contenedor del Mapa (Debe ocupar el 100% de la sección) --- */
+
+.mapa-contenedor {
+    position: absolute;
+    /* Posición absoluta para cubrir el 100% */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Usamos la misma técnica de Responsive Iframe para asegurar que cubra el 100% del contenedor padre */
+.mapa-responsive {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 0;
+    /* Anula el padding-bottom usado en la técnica 16:9 si existía */
+}
+
+.mapa-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    border: 0;
+}
+
+/* Media Query para escritorio/tablet: Mueve el bloque de información más a la izquierda */
+@media (min-width: 768px) {
+    .location-wrapper {
+        padding: 50px;
+        /* Más espacio en los bordes */
+    }
+}
+
+/* --- Estilos para el Footer --- */
+.main-footer {
+    background-color: #2c2e43;
+    /* Fondo oscuro */
+    color: white;
+    padding: 30px 20px;
+    font-family: 'Nunito Sans', sans-serif;
+    position: relative;
+}
+
+.footer-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-direction: column;
+    /* Apila los elementos en móvil */
+    text-align: center;
+}
+
+/* Estilos para las Redes Sociales */
+.footer-social a {
+    color: white;
+    font-size: 1.5em;
+    margin: 0 15px;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+.footer-social a:hover {
+    color: #4a91a9;
+    /* Color de énfasis */
+}
+
+/* Estilos para el Copyright y Créditos */
+.footer-credits {
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
+.footer-credits p {
+    margin: 0;
+}
+
+/* Adaptación para escritorio (Colocar elementos a los lados) */
+@media (min-width: 768px) {
+    .footer-content-wrapper {
+        flex-direction: row;
+        /* Coloca los elementos uno al lado del otro */
+        text-align: left;
+    }
+
+    .footer-social {
+        margin-right: auto;
+    }
+
+    .footer-credits {
+        margin-top: 0;
+        text-align: right;
+    }
 }
