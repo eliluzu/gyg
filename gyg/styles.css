@@ -344,16 +344,18 @@ html {
 }
 
 #meet-our-team .card .back h3 {
-    font-size: 30px;
-    margin-top: 20px;
+    font-size: 18px;
+    margin-top: 16px;
     color: #2c2e43;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     font-family: 'Montserrat', sans-serif;
 
 }
 
 #meet-our-team .card .back p {
     letter-spacing: 1px;
+    font-size: 12px;
+    margin-bottom: 20px;
 }
 
 #meet-our-team .card:hover .front {
@@ -439,20 +441,46 @@ html {
     flex: initial;
     width: initial;
     height: 350px;
-
+    /* >>> AVISO: Se ELIMINÓ la imagen de fondo genérica de aquí. <<< */
+    background-size: cover;
+    background-position: center;
+    /* Asegura que la imagen de fondo se centre */
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     position: relative;
-    background-color: #f4f4f4;
-    color: var(--text-dark);
+    background-color: #2c2e43;
+    color: #FFF;
+    font-size: 20px;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 
     scroll-snap-align: none;
 }
 
-/* Contenido por defecto y hover (se mantienen los estilos de SERVICES originales) */
+/* --- Imágenes de Fondo Específicas para Cada Tarjeta (CORRECCIÓN) --- */
+
+/* Tarjeta 1: EXPERTISE */
+#services .card-grid .card:nth-child(1) {
+    background-image: url('img/Expertise.png');
+}
+
+/* Tarjeta 2: QUALITY */
+#services .card-grid .card:nth-child(2) {
+    background-image: url('img/Quality.png');
+}
+
+/* Tarjeta 3: REPUTATION */
+#services .card-grid .card:nth-child(3) {
+    background-image: url('img/Reputation.png');
+}
+
+/* Tarjeta 4: PERSONAL APPROACH */
+#services .card-grid .card:nth-child(4) {
+    background-image: url('img/PersonalApproach.png');
+}
+
+/* Contenido por defecto y hover */
 
 #services .card-default {
     padding: 20px;
@@ -477,8 +505,8 @@ html {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: var(--primary-color);
-    color: var(--text-light);
+    background-color: #DAC59C;
+    color: #2c2e43;
     opacity: 0;
     transform: translateY(100%);
     transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
@@ -486,9 +514,11 @@ html {
 
 #services .card:hover {
     background-color: var(--primary-color);
+    /* Esta variable no está definida aquí, asumo que es correcta */
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
     transform: translateY(-8px);
     color: var(--text-light);
+    /* Esta variable no está definida aquí, asumo que es correcta */
 }
 
 #services .card:hover .card-default {
@@ -499,7 +529,6 @@ html {
     opacity: 1;
     transform: translateY(0);
 }
-
 
 
 /* ------------------------------------------------------------------ */
