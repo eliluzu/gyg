@@ -540,17 +540,23 @@ html {
     margin-bottom: 40px;
 }
 
-/* Contenedor de Cuadrícula Centrada */
 #services .card-grid {
-    display: grid;
-    /* Crea columnas automáticas que se ajustan y centran */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 30px;
-    max-width: 1100px;
-    /* Ajustado para 3 tarjetas */
-    margin: 0 auto;
     justify-content: center;
-    /* Centra las tarjetas si hay menos de 3 */
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente si el contenedor tiene altura */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#services .card-grid>.card {
+    flex: 1 1 300px;
+    /* Crece, se encoge y tiene base de 300px */
+    max-width: 400px;
+    /* Evita que se estiren demasiado en pantallas grandes */
 }
 
 /* Estilos de la Tarjeta */
