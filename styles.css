@@ -183,27 +183,21 @@ html {
 }
 
 
-/* ------------------------------------------------------------------ */
-/* --- SECCIÓN TEAM DESCRIPTION (#team) --- */
-/* ------------------------------------------------------------------ */
-
+/* --- CONFIGURACIÓN DE SECCIÓN --- */
 .team-section {
-    /* Agrega la imagen de fondo y elimina el background-color */
     background-image: url('img/grupo.png');
     background-size: cover;
-
-    min-height: 400px;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 80px 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 90px 20px;
 }
 
 .team-content-container {
-    text-align: center;
-    max-width: 900px;
+    max-width: 1200px;
     width: 100%;
-    padding: 20px;
+    text-align: center;
 }
 
 .team-title {
@@ -214,19 +208,149 @@ html {
 }
 
 .team-description-box {
-    background-color: rgba(255, 255, 255, 0.9);
-    color: var(--text-dark);
+    /* Fondo con 80% de opacidad (el 0.8 final controla la transparencia) */
+    background-color: rgba(44, 46, 67, 0.8);
+
+    /* Mantiene tu color de texto original */
+    color: #FFF;
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    font-size: 18px;
+    border-radius: 15px;
+    margin-bottom: 60px;
     line-height: 1.7;
-    font-family: 'Montserrat', sans-serif;
+
+    /* Efecto de desenfoque detrás de la caja (Glassmorphism) */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    /* Soporte para Safari */
+
+    /* Un borde sutil ayuda a definir la caja cuando es transparente */
+    border: 1px solid rgba(255, 255, 255, 0.979);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.team-description-box p {
-    margin-bottom: 15px;
+/* --- CONTENEDOR DE TARJETAS --- */
+.tarjeta__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
 }
+
+/* El "Papá" define la perspectiva global */
+.papa__tarjeta {
+    width: 270px;
+    height: 360px;
+    perspective: 1200px;
+}
+
+/* La Tarjeta que contiene el efecto preserve-3d */
+.tarjeta {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.papa__tarjeta:hover .tarjeta {
+    transform: rotateY(180deg);
+}
+
+/* Caras de la Tarjeta */
+.frente__tarjeta,
+.dorso__tarjeta {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+/* ESTILO CARA FRONTAL (CON IMAGEN) */
+.frente__tarjeta {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.996);
+}
+
+
+
+.contenido-frente {
+    position: relative;
+    z-index: 2;
+    transform-style: preserve-3d;
+}
+
+.frente__tarjeta .numero {
+    font-size: 3.5rem;
+    font-weight: 900;
+    opacity: 0.5;
+    transform: translateZ(30px);
+    /* El número flota un poco */
+}
+
+.frente__tarjeta h3 {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    transform: translateZ(50px);
+    /* El título flota más */
+}
+
+/* ESTILO CARA TRASERA */
+.dorso__tarjeta {
+    background-color: var(--active-color);
+    color: #2c2e43;
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+
+}
+
+.cuerpo__tarjeta_dorso {
+    transform: translateZ(60px);
+    /* Texto del dorso con mucha profundidad */
+}
+
+.cuerpo__tarjeta_dorso h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+}
+
+.cuerpo__tarjeta_dorso p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 768px) {
+    .papa__tarjeta {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+/* Ajuste para móviles */
+@media (max-width: 600px) {
+    .flip-card {
+        width: 100%;
+        /* Una por fila en pantallas muy pequeñas */
+        max-width: 300px;
+    }
+}
+
+
 
 
 /* ------------------------------------------------------------------ */
@@ -322,11 +446,11 @@ html {
 #meet-our-team .card .back {
     transform: perspective(600px) rotateY(180deg);
     background: #DAC59C;
-    padding: 15px;
+    padding: 20px;
     color: #2c2e43;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
 
@@ -335,7 +459,7 @@ html {
 #meet-our-team .card .back .link {
     border-top: solid 1px #2c2e43;
     height: 50px;
-    line-height: 50px;
+    line-height: 20px;
 }
 
 #meet-our-team .card .back .link a {
@@ -344,16 +468,17 @@ html {
 }
 
 #meet-our-team .card .back h3 {
-    font-size: 30px;
-    margin-top: 20px;
+    font-size: 18px;
     color: #2c2e43;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    margin-bottom: 60px;
     font-family: 'Montserrat', sans-serif;
 
 }
 
 #meet-our-team .card .back p {
-    letter-spacing: 1px;
+    font-size: 12px;
+    line-height: 1.2;
 }
 
 #meet-our-team .card:hover .front {
@@ -397,126 +522,120 @@ html {
     right: -60px;
 }
 
-/* ------------------------------------------------------------------ */
-/* --- SECCIÓN SERVICES (CUADRÍCULA FIJA - VISTA EN IMAGEN) --- */
-/* ------------------------------------------------------------------ */
-
+/* --- SECCIÓN SERVICES --- */
 #services {
-    padding: 60px 20px;
+    padding: 80px 20px;
     text-align: center;
-    background-color: var(--text-light);
-    background-image: url(img/fondo_services.png);
+    background-color: #2c2e43;
+    /* Color de respaldo */
+    background-image: url('img/fondo_services.png');
     background-size: cover;
+    background-position: center;
 }
 
 #services h2 {
-    margin-bottom: 30px;
-    font-size: 2em;
-    color: var(--text-dark);
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(2.5em, 6vw, 3em);
+    font-size: clamp(1.5em, 6vw, 3em);
     color: #DAC59C;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
-/* Contenedor de Cuadrícula */
 #services .card-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    /* Base para móvil */
+    display: flex;
+    flex-wrap: wrap;
     gap: 30px;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente si el contenedor tiene altura */
     max-width: 1200px;
     margin: 0 auto;
+}
 
-    /* ANULAMOS los estilos de carrusel */
-    overflow-x: visible;
-    padding: 0;
+#services .card-grid>.card {
+    flex: 1 1 300px;
+    /* Crece, se encoge y tiene base de 300px */
+    max-width: 400px;
+    /* Evita que se estiren demasiado en pantallas grandes */
 }
 
 /* Estilos de la Tarjeta */
 #services .card {
-    /* Sobreescribimos el flex y el ancho fijo del carrusel de equipo */
-    flex: initial;
-    width: initial;
-    height: 350px;
-    /* >>> AVISO: Se ELIMINÓ la imagen de fondo genérica de aquí. <<< */
+    height: 400px;
     background-size: cover;
     background-position: center;
-    /* Asegura que la imagen de fondo se centre */
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     position: relative;
-    background-color: #2c2e43;
-    color: #FFF;
-    font-size: 20px;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-
-    scroll-snap-align: none;
+    margin: 0 auto;
+    /* Centra la tarjeta en su espacio */
+    width: 100%;
+    max-width: 350px;
 }
 
-/* --- Imágenes de Fondo Específicas para Cada Tarjeta (CORRECCIÓN) --- */
-
-/* Tarjeta 1: EXPERTISE */
-#services .card-grid .card:nth-child(1) {
-    background-image: url('img/Expertise.png');
+/* Imágenes de Fondo para cada tarjeta */
+#services .card:nth-child(1) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('img/tax.png');
 }
 
-/* Tarjeta 2: QUALITY */
-#services .card-grid .card:nth-child(2) {
-    background-image: url('img/Quality.png');
+#services .card:nth-child(2) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('img/bookkeping.png');
 }
 
-/* Tarjeta 3: REPUTATION */
-#services .card-grid .card:nth-child(3) {
-    background-image: url('img/Reputation.png');
+#services .card:nth-child(3) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('img/payroll.png');
 }
 
-/* Tarjeta 4: PERSONAL APPROACH */
-#services .card-grid .card:nth-child(4) {
-    background-image: url('img/PersonalApproach.png');
-}
-
-/* Contenido por defecto y hover */
-
+/* Contenido Frontal (Default) */
 #services .card-default {
     padding: 20px;
     height: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-align: center;
-    transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.3s ease;
 }
 
+#services .card-default h3 {
+    color: #FFF;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 1.4em;
+}
+
+/* Contenido al pasar el mouse (Hover) */
 #services .card-hover {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 20px;
+    padding: 25px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    background-color: #DAC59C;
+    background-color: rgba(218, 197, 156, 0.95);
+    /* El color #DAC59C con ligera transparencia */
     color: #2c2e43;
     opacity: 0;
     transform: translateY(100%);
-    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
 }
 
+#services .card-hover p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Estados Hover */
 #services .card:hover {
-    background-color: var(--primary-color);
-    /* Esta variable no está definida aquí, asumo que es correcta */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
-    transform: translateY(-8px);
-    color: var(--text-light);
-    /* Esta variable no está definida aquí, asumo que es correcta */
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
 #services .card:hover .card-default {
@@ -527,7 +646,6 @@ html {
     opacity: 1;
     transform: translateY(0);
 }
-
 
 /* ------------------------------------------------------------------ */
 /* --- MEDIA QUERIES --- */
@@ -812,7 +930,7 @@ html {
 }
 
 .testimonials-item .name {
-    font-size: 24px;
+    font-size: 20px;
     text-transform: capitalize;
     font-weight: 600;
     color: var(--text-dark);
@@ -833,12 +951,13 @@ html {
     margin-top: 20px;
     color: #333333;
     font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
 
 }
 
 .testimonials-item .rating {
     margin-top: 15px;
-    font-size: 18px;
+    font-size: 16px;
     color: var(--active-color);
 }
 
