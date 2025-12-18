@@ -188,45 +188,164 @@ html {
 /* ------------------------------------------------------------------ */
 
 .team-section {
-    /* Agrega la imagen de fondo y elimina el background-color */
     background-image: url('img/grupo.png');
     background-size: cover;
-
+    background-position: center;
+    background-attachment: fixed;
+    /* Opcional: da un efecto elegante al hacer scroll */
     min-height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 90px 20px;
+    padding: 80px 20px;
 }
 
 .team-content-container {
     text-align: center;
-    max-width: 900px;
+    max-width: 1200px;
+    /* Ancho suficiente para 4 tarjetas */
     width: 100%;
-    padding: 20px;
+
+
 }
 
 .team-title {
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(2.5em, 6vw, 3em);
-    color: var(--active-color);
+    color: #DAC59C;
     margin-bottom: 20px;
 }
 
 .team-description-box {
-    background-color: rgba(255, 255, 255, 0.9);
-    color: var(--text-dark);
-    padding: 30px;
+    background-color: color-mix(in srgb, #2c2e43 80%, transparent);
+    color: #f3f3f3;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.7;
     font-family: 'Montserrat', sans-serif;
+    margin-bottom: 60px;
 }
 
 .team-description-box p {
     margin-bottom: 15px;
 }
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.tarjeta__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* El "Papá" da la perspectiva */
+.papa__tarjeta {
+    width: 260px;
+    height: 340px;
+    perspective: 1200px;
+    /* Aumentado para mayor profundidad */
+}
+
+/* La Tarjeta que gira */
+.tarjeta {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    /* CLAVE: Mantiene los hijos en 3D */
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.papa__tarjeta:hover .tarjeta {
+    transform: rotateY(180deg);
+}
+
+/* Caras Comunes */
+.frente__tarjeta,
+.dorso__tarjeta {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    /* Oculta la cara que queda atrás */
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* CARA FRONTAL */
+.frente__tarjeta {
+    background: #e6c89b;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.frente__tarjeta .numero {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #2c2e43;
+    margin-bottom: 10px;
+}
+
+.frente__tarjeta h3 {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    text-transform: uppercase;
+}
+
+/* CARA TRASERA */
+.dorso__tarjeta {
+    background: #2c2e43;
+    color: white;
+    transform: rotateY(180deg);
+    /* Aquí creamos el efecto 3D del contenido */
+    transform-style: preserve-3d;
+}
+
+.cuerpo__tarjeta_dorso {
+    /* Esto "levanta" el texto 50px sobre la tarjeta al girar */
+    transform: translateZ(60px);
+    text-align: center;
+}
+
+.cuerpo__tarjeta_dorso h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cuerpo__tarjeta_dorso p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Estilos de tu sección original para asegurar integración */
+.team-section {
+    background-image: url('img/grupo.png');
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 600px) {
+    .flip-card {
+        width: 100%;
+        /* Una por fila en pantallas muy pequeñas */
+        max-width: 300px;
+    }
+}
+
+
 
 
 /* ------------------------------------------------------------------ */
@@ -322,11 +441,11 @@ html {
 #meet-our-team .card .back {
     transform: perspective(600px) rotateY(180deg);
     background: #DAC59C;
-    padding: 15px;
+    padding: 20px;
     color: #2c2e43;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
 
@@ -335,7 +454,7 @@ html {
 #meet-our-team .card .back .link {
     border-top: solid 1px #2c2e43;
     height: 50px;
-    line-height: 50px;
+    line-height: 20px;
 }
 
 #meet-our-team .card .back .link a {
@@ -345,17 +464,16 @@ html {
 
 #meet-our-team .card .back h3 {
     font-size: 18px;
-    margin-top: 16px;
     color: #2c2e43;
     letter-spacing: 1px;
+    margin-bottom: 60px;
     font-family: 'Montserrat', sans-serif;
 
 }
 
 #meet-our-team .card .back p {
-    letter-spacing: 1px;
     font-size: 12px;
-    margin-bottom: 20px;
+    line-height: 1.2;
 }
 
 #meet-our-team .card:hover .front {
@@ -416,7 +534,7 @@ html {
     font-size: 2em;
     color: var(--text-dark);
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(2.5em, 6vw, 3em);
+    font-size: clamp(1.5em, 6vw, 3em);
     color: #DAC59C;
     margin-bottom: 20px;
 }
@@ -452,7 +570,7 @@ html {
     position: relative;
     background-color: #2c2e43;
     color: #FFF;
-    font-size: 20px;
+    font-size: 18px;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 
     scroll-snap-align: none;
@@ -497,6 +615,7 @@ html {
     top: 0;
     left: 0;
     width: 100%;
+    font-size: 16px;
     height: 100%;
     padding: 20px;
     box-sizing: border-box;
@@ -814,7 +933,7 @@ html {
 }
 
 .testimonials-item .name {
-    font-size: 24px;
+    font-size: 20px;
     text-transform: capitalize;
     font-weight: 600;
     color: var(--text-dark);
@@ -835,12 +954,13 @@ html {
     margin-top: 20px;
     color: #333333;
     font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
 
 }
 
 .testimonials-item .rating {
     margin-top: 15px;
-    font-size: 18px;
+    font-size: 16px;
     color: var(--active-color);
 }
 
