@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>G+G CPA Services - One Page</title>
+
+    <style>
+        /* Importación de fuentes de Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Espera a que el DOM esté completamente cargado
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Selecciona todos los enlaces de la navegación principal que empiecen con '#'
+            const navLinks = document.querySelectorAll('.main-nav a[href^="#"]');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    // Previene el comportamiento predeterminado del enlace (salto instantáneo)
+                    e.preventDefault();
+
+                    // Obtiene el valor del atributo href (ej: #services, #contact)
+                    const targetId = this.getAttribute('href');
+
+                    // Verifica que el ID de destino exista en el documento
+                    const targetSection = document.querySelector(targetId);
+
+                    if (targetSection) {
+                        // Utiliza el método scrollIntoView con la opción 'smooth'
+                        // Esto maneja el scroll suave de forma nativa en la mayoría de los navegadores modernos.
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+<body>
+
+
+    <section class="hero-section">
+
+        <div class="video-background">
+            <video autoplay loop muted id="myVideo">
+                <source src="video/video_eng.mp4" type="video/mp4">
+                Tu navegador no soporta la etiqueta de video.
+            </video>
+        </div>
+
+        <div class="overlay"></div>
+
+        <button id="playPauseBtn" class="video-control-btn">
+            <i id="controlIcon" class="fa-solid fa-play"></i>
+        </button>
+
+        <header class="main-header">
+
+            <div class="logo-left">
+                <a href="https://gandg.cpa/indexesp.html">
+                    <img src="img/logo.png" alt="G+G CPA Services Logo">
+                </a>
+            </div>
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#team">TEAM</a></li>
+                    <li><a href="#services">SERVICES</a></li>
+                    <li><a href="#meet-our-team">MEET OUR TEAM</a></li>
+                    <li><a href="#testimonials">TESTIMONIALS</a></li>
+                    <li><a href="#location">LOCATE US</a></li>
+                    <li class="lang-selector">
+                        <a href="index.html" class="lang-link active-lang" title="English">
+                            <img src="img/estados.png" alt="English" class="flag-img">
+                        </a>
+
+                        <a href="https://gandg.cpa/indexesp.html" class="lang-link" title="Español">
+                            <img src="img/espana.png" alt="Español" class="flag-img">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="hero-content">
+            <a href="mailto:zoulethgonzalez@outlook.com" class="cta-button">
+                Schedule your consultation
+            </a>
+        </div>
+
+    </section>
+    <section id="team" class="team-section">
+        <div class="team-content-container">
+
+            <div class="team-description-box">
+                <h2 class="team-title">TEAM</h2>
+                <p><strong>TRUST YOUR BUSINESS TO US. WE WILL TAKE CARE OF IT</strong></p>
+                <p>As the only fully bilingual accounting firm in Memphis, we’re uniquely positioned to serve a diverse
+                    client base with clarity and care.
+
+
+                </p>
+                <p>We specialize in supporting small businesses, helping them grow and thrive—because we believe that a
+                    strong local economy begins with empowered entrepreneurs.</p>
+                <p>We also recognize that no two businesses are alike. That’s why we offer fully customized accounting
+                    solutions tailored to your specific needs, ensuring you get the right support at every stage of your
+                    business journey.</p>
+            </div>
+
+            <div class="tarjeta__container">
+
+                <div class="papa__tarjeta">
+                    <div class="tarjeta">
+                        <div class="frente__tarjeta" style="background-image: url('img/Expertise.png');">
+                            <div class="overlay"></div>
+                            <div class="contenido-frente">
+                                <div class="numero">01</div>
+                                <h3>Expertise</h3>
+                            </div>
+                        </div>
+                        <div class="dorso__tarjeta">
+                            <div class="cuerpo__tarjeta_dorso">
+                                <h3>Expertise</h3>
+                                <p>Our experienced team works under the guidance of a licensed CPA to deliver efficient,
+                                    reliable solutions that help your business succeed.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="papa__tarjeta">
+                    <div class="tarjeta">
+                        <div class="frente__tarjeta" style="background-image: url('img/Quality.png');">
+                            <div class="overlay"></div>
+                            <div class="contenido-frente">
+                                <div class="numero">02</div>
+                                <h3>Quality</h3>
+                            </div>
+                        </div>
+                        <div class="dorso__tarjeta">
+                            <div class="cuerpo__tarjeta_dorso">
+                                <h3>Quality</h3>
+                                <p>We work efficiently to clarify and resolve our clients’ needs as quickly as possible.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="papa__tarjeta">
+                    <div class="tarjeta">
+                        <div class="frente__tarjeta" style="background-image: url('img/Reputation.png');">
+                            <div class="overlay"></div>
+                            <div class="contenido-frente">
+                                <div class="numero">03</div>
+                                <h3>Reputation</h3>
+                            </div>
+                        </div>
+                        <div class="dorso__tarjeta">
+                            <div class="cuerpo__tarjeta_dorso">
+                                <h3>Reputation</h3>
+                                <p>Don’t just take our word for it. Schedule your free consultation today and see how we
+                                    can help your business grow.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="papa__tarjeta">
+                    <div class="tarjeta">
+                        <div class="frente__tarjeta" style="background-image: url('img/PersonalApproach.png');">
+                            <div class="overlay"></div>
+                            <div class="contenido-frente">
+                                <div class="numero">04</div>
+                                <h3>Personal Approach</h3>
+                            </div>
+                        </div>
+                        <div class="dorso__tarjeta">
+                            <div class="cuerpo__tarjeta_dorso">
+                                <h3>Personal Approach</h3>
+                                <p>We treat your business like our own and stay involved in every step. We never lose
+                                    sight of the customer side of the business.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2 class="services-title">OUR SERVICES</h2>
+
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-default">
+                    <h3>TAX PREPARATION SERVICES</h3>
+                </div>
+                <div class="card-hover">
+                    <h4>TAX PREPARATION SERVICES</h4>
+                    <p>Our full-services are designed to accurately and efficiently complete your annual tax filings
+                        for
+                        the IRS and applicable state agencies; including:
+                        <br>• Form 1040, 1065, 1120/1120S, 990.
+                        <br>Our team ensures your filings are timely, accurate, and compliant.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-default">
+                    <h3>BOOKKEEPING</h3>
+                </div>
+                <div class="card-hover">
+                    <h4>BOOKKEEPING</h4>
+                    <p>Focusing on the processing, organization, and interpretation of financial data.
+                        <br>• Quarterly Reports
+                        <br>• Account Reconciliation
+                        <br>• QuickBooks Expertise
+                        <br>Ensuring your records are tax-ready.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-default">
+                    <h3>PAYROLL</h3>
+                </div>
+                <div class="card-hover">
+                    <h4>PAYROLL</h4>
+                    <p>Managing payroll accurately for compliance and satisfaction.
+                        <br>• Weekly/Biweekly Processing
+                        <br>• Preparation of W-2s, Forms 941 & 940
+                        <br>• State Unemployment Reports
+                        <br>Focus on your business while we handle the regulations.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section id="meet-our-team">
+        <h2 class="team-title">MEET OUR TEAM</h2>
+
+        <div class="carousel-container">
+
+            <button class="nav-arrow left-arrow" aria-label="Anterior">&#10094;</button>
+
+            <div class="card-wrapper">
+
+                <div class="card">
+                    <div class="face front">
+                        <img src="img/01.png" alt="Foto de Miembro 1 del equipo">
+                        <h3>Zouleth (Gina) Gonzalez</h3>
+                    </div>
+                    <div class="face back">
+                        <h3>Zouleth (Gina) Gonzalez</h3>
+                        <p>Zouleth is our Certified Public Accountant (CPA) and holds both a Bachelor's and Master's
+                            degree from the University of Memphis. She is deeply committed to supporting the community
+                            and empowering small businesses to grow and thrive. Known for her positive attitude and
+                            results-driven mindset, Zouleth brings a proactive approach to problem-solving and is
+                            dedicated to delivering effective, customized solutions to help businesses overcome
+                            challenges and achieve long-term success.</p>
+                        <!-- Este es un comentario en HTML 
+                         <div class="link">
+                            <a href="#">Details</a>
+                        </div> 
+                    -->
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="face front">
+                        <img src="img/04.png" alt="Foto de Miembro 2 del equipo">
+                        <h3>Santiago Rodriguez</h3>
+                    </div>
+                    <div class="face back">
+                        <h3>Santiago Rodriguez</h3>
+                        <p>Santiago is a valuable asset to our team, bringing a strong background in accounting and data
+                            analytics. He holds both a Bachelor's and Master's degree in Accounting with a concentration
+                            in Data Analytics from the University of Memphis. Santiago primarily oversees our payroll
+                            department, supports bookkeeping and audit processes, and plays a key role during tax season
+                            by preparing and filing tax returns.</p>
+                        <!-- Este es un comentario en HTML 
+                         <div class="link">
+                            <a href="#">Details</a>
+                        </div> 
+                    -->
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="face front">
+                        <img src="img/YolandaHermosillo.png" alt="Foto de Miembro 3 del equipo">
+                        <h3>Yolanda Hermosillo</h3>
+                    </div>
+                    <div class="face back">
+                        <h3>Yolanda Hermosillo</h3>
+                        <p>Yolanda is one of our friendly and welcoming receptionists! You’ll likely hear her cheerful
+                            voice when calling our office. With a strong interest in finance and business, she has
+                            completed several tax and financial courses over the years, including individual tax
+                            preparation, personal finance, and business startup and growth. She has completed an
+                            associates in Technical Support Engineering and IT Fundamentals, and is currently pursuing a
+                            Bachelor of Applied Science in Information Technology combining her administrative skills
+                            with a growing expertise in technology.</p>
+                        <!-- Este es un comentario en HTML 
+                         <div class="link">
+                            <a href="#">Details</a>
+                        </div> 
+                    -->
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="face front">
+                        <img src="img/OtiliaRodriguez.png" alt="Foto de Miembro 4 del equipo">
+                        <h3>Otilia Rodriguez</h3>
+                    </div>
+                    <div class="face back">
+                        <h3>Otilia Rodriguez</h3>
+                        <p>Otilia is one of our friendly receptionists and a vital part of our front office team. She’s
+                            in the office on Mondays and Fridays, so if you stop by to pick up payroll checks, you’ll
+                            likely have the pleasure of meeting her. With many years of administrative experience, she
+                            plays an essential role in keeping our operations running smoothly; managing documents,
+                            scheduling appointments, and supporting both clients and staff throughout and beyond the
+                            busy tax season.</p>
+                        <!-- Este es un comentario en HTML 
+                         <div class="link">
+                            <a href="#">Details</a>
+                        </div> 
+                    -->
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="face front">
+                        <img src="img/MariselaNegrete.png" alt="Foto de Miembro 5 del equipo">
+                        <h3>Marisela Negrete</h3>
+                    </div>
+                    <div class="face back">
+                        <h3>Marisela Negrete</h3>
+                        <p>Marisela is our jack of all trades. She handles bookkeeping, payroll, sales tax filings, and
+                            workers' compensation audits with precision and reliability. Throughout the year, she
+                            provides vital support to our accountants; both during and outside of tax season, to ensure
+                            that all client filings are completed accurately and on time, regardless of how busy the
+                            office gets. Marisela holds a valid PTIN (Preparer Tax Identification Number) and has
+                            completed tax education courses to deepen her knowledge and better serve our clients’
+                            diverse needs.</p>
+                        <!-- Este es un comentario en HTML 
+                         <div class="link">
+                            <a href="#">Details</a>
+                        </div> 
+                    -->
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="face front">
+                        <img src="img/06.png" alt="Foto de Miembro 6 del equipo">
+                        <h3>Xiomara Perez</h3>
+                    </div>
+                    <div class="face back">
+                        <h3>Xiomara Perez</h3>
+                        <p>Xiomara is the longest-standing member of the team and a key pillar of the office. She holds
+                            a degree in Graphic Design from the University of Guadalajara and has experience in
+                            management and human resources. She currently oversees business administration and
+                            bookkeeping, standing out for her attention to detail, commitment, and willingness to help
+                            wherever needed, while also bringing warmth and personality to the team.</p>
+                        <!-- Este es un comentario en HTML 
+                         <div class="link">
+                            <a href="#">Details</a>
+                        </div> 
+                    -->
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="face front">
+                        <h3>Daena Montero</h3>
+                    </div>
+                    <div class="face back">
+                        <h3>Daena Montero</h3>
+                        <p>Daena is the newest addition to our team and plays a key role in managing client accounts and
+                            office operations to ensure every client receives exceptional service. She supports client
+                            communications, organizes task lists, and follows up on payments, helping to keep everything
+                            running smoothly. Daena holds a valid PTIN (Preparer Tax Identification Number) and is
+                            currently preparing for the Enrolled Agent examination. Her goal is to assist clients with
+                            tax return preparation during tax season and continuously enhance their overall experience
+                            with our firm.</p>
+                        <!-- Este es un comentario en HTML 
+                         <div class="link">
+                            <a href="#">Details</a>
+                        </div> 
+                    -->
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="nav-arrow right-arrow" aria-label="Siguiente">&#10095;</button>
+        </div>
+    </section>
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="title">TESTIMONIALS</h2>
+            </div>
+            <div class="testimonials-content">
+                <div class="swiper testimonials-slider js-testimonials-slider">
+                    <div class="swiper-wrapper">
+
+                        <div class=" swiper-slide testimonials-item">
+                            <div class="info">
+                                <img src="img/user.jpg" alt="Photo of client Maria Rodriguez">
+                                <div class="text-box">
+                                    <h3 class="name">Ronald Koonce, Amber Waves Inc.</h3>
+                                    <span class="job">Business Owner</span>
+                                </div>
+                            </div>
+                            <p>“As a small business owner, I was looking for someone who could manage my payroll and tax
+                                liabilities. I found G&G CPA Services through a mutual friend and when I saw their
+                                qualifications, I decided to give them a try. Not only are they highly recommended, but
+                                they are also very knowledgeable in QuickBooks, which is the simplest way to manage your
+                                business financials online. As a result of our decision, we are consistently ahead of
+                                schedule on tax payments which means no more penalties for late filing. More
+                                importantly, it gives me the liberty to focus on what I do best, leading the business.
+                                Not to mention I can sleep at night knowing I have a consultant for any tax related
+                                questions.”</p>
+                            <div class="rating">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </div>
+                        </div>
+
+
+                        <div class=" swiper-slide testimonials-item">
+                            <div class="info">
+                                <img src="img/user.jpg" alt="Photo of client Maria Rodriguez">
+                                <div class="text-box">
+                                    <h3 class="name">Lorenzo Calzadilla, Vegas Flooring LLC</h3>
+                                    <span class="job">Business Owner</span>
+                                </div>
+                            </div>
+                            <p>“Since I’ve had my business I am very happy and grateful for Mrs. Gina, who provides me
+                                with accounting services. In the time that I have known her I can ascertain that she us
+                                an honest person, professional and very efficient in her job.”</p>
+                            <div class="rating">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide testimonials-item">
+                            <div class="info">
+                                <img src="img/user.jpg" alt="Photo of client David Chen">
+                                <div class="text-box">
+                                    <h3 class="name">Manuel R Martínez, Maciel’s Tortas and Tacos</h3>
+                                    <span class="job">Business Owner</span>
+                                </div>
+                            </div>
+                            <p>“In June of 2015, I began my journey along with my family to open our own business, It
+                                was not easy at all for the path was full of bureaucracy and paperwork that we sometimes
+                                do not understand, first step was to looks foe a bank that would fulfill our
+                                expectations and would help us by not charging too many commissions. Later was looking
+                                for an honest accountant that would help us in our journey since we sis not have the
+                                slightest idea what we were getting ourselves into, therefore we did not want to have
+                                any problems with the IRS.
+                                Never did we imagine that our accountant would not only be an honest person, as she does
+                                not lie and gives the correct direction to not have problems in the future, but also a
+                                person that is so important to our family and business.
+                                Gina Gonzalez, I thank you from the bottom of my heart for being with us and always
+                                being available to help every time we have questions.”
+                            </p>
+                            <div class="rating">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide testimonials-item">
+                            <div class="info">
+                                <img src="img/user.jpg" alt="Photo of client Sarah Jones">
+                                <div class="text-box">
+                                    <h3 class="name">Mitanni R Spruill LeSeur</h3>
+                                    <span class="job">Business Owner</span>
+                                </div>
+                            </div>
+                            <p>“Gina is a lovely person, very professional, and super passionate about her business. She
+                                seems to really care about the welfare of her clients and ensuring that vital paperwork
+                                is accurate and submitted on time.”</p>
+                            <div class="rating">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="swiper-pagination js-testimonials-pagination"></div>
+            </div>
+        </div>
+    </section>
+    <section id="location" class="location-section">
+
+        <div class="location-wrapper">
+
+            <div class="info-contacto">
+                <h2 class="location-title">LOCATE US</h2>
+
+                <div class="detalle-contacto">
+                    <h3>ADDRESS</h3>
+                    <p>5100 Poplar Ave suite 2800 Memphis TN 38137</p>
+                </div>
+                <div class="detalle-contacto">
+                    <h3>PHONE NUMBER</h3>
+                    <p>(+1) 901-833-8839</p>
+                </div>
+
+                <div class="detalle-contacto">
+                    <h3>EMAIL</h3>
+                    <p>zoulethgonzalez@outlook.com</p>
+                </div>
+
+                <div class="detalle-contacto">
+                    <h3>OFFICE HOURS</h3>
+                    <p>Mon - Fri: 8:00am - 5:00pm</p>
+                    <p>Sat: By appointment only</p>
+                </div>
+            </div>
+
+            <div class="mapa-contenedor">
+                <div class="mapa-responsive">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3263.7520026856027!2d-89.8917299!3d35.112902999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x887f84639c24862d%3A0x2bcdd5414d261e2!2s5100%20Poplar%20Ave%20%232800%2C%20Memphis%2C%20TN%2038137%2C%20EE.%20UU.!5e0!3m2!1ses!2sar!4v1768253975614!5m2!1ses!2sar"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <footer class="main-footer">
+
+        <div class="footer-content-wrapper">
+
+            <div class="footer-social">
+                <a href="https://www.facebook.com/GonzalezTaxes" target="_blank" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook" style="color: rgba(255, 255, 255, 1.00);"></i>
+                </a>
+                <a href="https://www.instagram.com/gandgcpa/" target="_blank" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram" style="color: rgba(255, 255, 255, 1.00);"></i>
+                </a>
+            </div>
+
+            <div class="footer-credits">
+                <p>&copy; 2026 G & G</p>
+                <p>Designed by NOVO PUBLICIDAD </p>
+            </div>
+
+        </div>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <div class="go-top-container">
+        <div class="go-top-button">
+            <img src="img/flecha.png" alt="Icono de volver arriba">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Este script inicializa el Swiper y apunta al selector de la paginación.
+        const swiper = new Swiper('.js-testimonials-slider', {
+            grabCursor: true,
+            spaceBetween: 30,
+            pagination: {
+                el: '.js-testimonials-pagination',
+                clickable: true
+            },
+            breakpoints: {
+                767: {
+                    slidesPerView: 2
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
